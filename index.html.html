@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anum Zafarullah — HR & Organisational Development</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF9F6;
+    --white: #ffffff;
+    --charcoal: #1C1C1C;
+    --mid: #5A5A5A;
+    --light: #9A9A9A;
+    --border: #E8E5DF;
+    --accent: #B5895A;
+    --accent-light: #F5EDE1;
+    --display: 'Cormorant Garamond', serif;
+    --body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--body);
+    background: var(--cream);
+    color: var(--charcoal);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(250,249,246,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: var(--display);
+    font-size: 18px; font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--charcoal);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 13px; font-weight: 400;
+    color: var(--mid);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--charcoal); }
+
+  /* SECTIONS */
+  section { padding: 100px 5%; }
+  .container { max-width: 1060px; margin: 0 auto; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding-top: 120px;
+    padding-bottom: 80px;
+    background: var(--cream);
+  }
+  .hero-inner {
+    max-width: 1060px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .hero-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .hero-name {
+    font-family: var(--display);
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 300; line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--charcoal);
+    margin-bottom: 0.3em;
+  }
+  .hero-title {
+    font-family: var(--display);
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 400; color: var(--mid);
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+  .hero-bio {
+    font-size: 15px; color: var(--mid);
+    line-height: 1.8; max-width: 480px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--charcoal); color: var(--white);
+    text-decoration: none; padding: 14px 28px;
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    transition: background 0.2s;
+  }
+  .hero-cta:hover { background: var(--accent); }
+  .hero-cta-sec {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid var(--border); color: var(--charcoal);
+    text-decoration: none; padding: 14px 28px;
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin-left: 12px;
+    transition: border-color 0.2s;
+  }
+  .hero-cta-sec:hover { border-color: var(--charcoal); }
+
+  .hero-stats {
+    border-left: 1px solid var(--border);
+    padding-left: 60px;
+  }
+  .stat-item { margin-bottom: 2.5rem; }
+  .stat-item:last-child { margin-bottom: 0; }
+  .stat-num {
+    font-family: var(--display);
+    font-size: 48px; font-weight: 300; line-height: 1;
+    color: var(--charcoal);
+  }
+  .stat-num span { font-size: 24px; color: var(--accent); }
+  .stat-label {
+    font-size: 12px; color: var(--light);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  /* DIVIDER */
+  .section-divider {
+    border: none; border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* SECTION HEADER */
+  .section-header { margin-bottom: 3rem; }
+  .section-tag {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: var(--display);
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300; color: var(--charcoal);
+    line-height: 1.2;
+  }
+
+  /* EXPERTISE */
+  #expertise { background: var(--white); }
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .expertise-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    transition: background 0.2s;
+  }
+  .expertise-card:hover { background: var(--accent-light); }
+  .expertise-icon {
+    width: 36px; height: 36px;
+    margin-bottom: 1.5rem;
+    opacity: 0.6;
+  }
+  .expertise-card h3 {
+    font-family: var(--display);
+    font-size: 20px; font-weight: 500;
+    margin-bottom: 0.75rem;
+    color: var(--charcoal);
+  }
+  .expertise-card p {
+    font-size: 14px; color: var(--mid);
+    line-height: 1.7;
+  }
+
+  /* EXPERIENCE */
+  #experience { background: var(--cream); }
+  .experience-list { display: flex; flex-direction: column; gap: 0; }
+  .exp-item {
+    display: grid; grid-template-columns: 200px 1fr;
+    gap: 3rem; padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .exp-item:first-child { border-top: 1px solid var(--border); }
+  .exp-meta { padding-top: 4px; }
+  .exp-period {
+    font-size: 12px; color: var(--light);
+    letter-spacing: 0.06em; margin-bottom: 6px;
+  }
+  .exp-company {
+    font-size: 13px; font-weight: 500;
+    color: var(--accent); margin-bottom: 4px;
+  }
+  .exp-industry {
+    font-size: 12px; color: var(--light);
+    font-style: italic;
+  }
+  .exp-title {
+    font-family: var(--display);
+    font-size: 22px; font-weight: 500;
+    color: var(--charcoal); margin-bottom: 0.75rem;
+  }
+  .exp-desc {
+    font-size: 14px; color: var(--mid);
+    margin-bottom: 1rem; line-height: 1.7;
+  }
+  .exp-highlights { list-style: none; }
+  .exp-highlights li {
+    font-size: 13.5px; color: var(--mid);
+    padding: 4px 0 4px 1rem;
+    position: relative; line-height: 1.6;
+  }
+  .exp-highlights li::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--accent);
+  }
+
+  /* ACCOMPLISHMENTS */
+  #accomplishments { background: var(--charcoal); }
+  #accomplishments .section-tag { color: var(--accent); }
+  #accomplishments .section-title { color: var(--white); }
+  .acc-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .acc-card {
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 2rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .acc-card:hover {
+    border-color: var(--accent);
+    background: rgba(181,137,90,0.06);
+  }
+  .acc-card h3 {
+    font-family: var(--display);
+    font-size: 18px; font-weight: 500;
+    color: var(--white); margin-bottom: 0.75rem;
+  }
+  .acc-card p {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+
+  /* SKILLS */
+  #skills { background: var(--white); }
+  .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .skills-group h3 {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1.25rem;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tag {
+    font-size: 13px; color: var(--mid);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    background: var(--cream);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .skill-tag:hover { border-color: var(--accent); color: var(--charcoal); }
+  .tools-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .tool-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 14px; color: var(--mid);
+  }
+  .tool-item::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* EDUCATION */
+  #education { background: var(--cream); }
+  .edu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .edu-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 2rem;
+  }
+  .edu-degree {
+    font-family: var(--display);
+    font-size: 18px; font-weight: 500;
+    color: var(--charcoal); margin-bottom: 0.5rem;
+  }
+  .edu-school { font-size: 14px; color: var(--mid); margin-bottom: 0.25rem; }
+  .edu-year {
+    font-size: 12px; color: var(--accent);
+    letter-spacing: 0.06em; font-weight: 500;
+  }
+  .edu-badge {
+    display: inline-block; margin-top: 0.75rem;
+    font-size: 11px; background: var(--accent-light);
+    color: var(--accent); padding: 4px 10px;
+    font-weight: 500; letter-spacing: 0.06em;
+  }
+
+  /* CONTACT */
+  #contact { background: var(--accent-light); }
+  .contact-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .contact-text .section-tag { color: var(--accent); }
+  .contact-text p {
+    font-size: 15px; color: var(--mid);
+    margin-top: 1rem; line-height: 1.8;
+  }
+  .contact-details { display: flex; flex-direction: column; gap: 1.25rem; }
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 14px;
+  }
+  .contact-icon {
+    width: 40px; height: 40px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-icon svg { width: 16px; height: 16px; color: var(--accent); }
+  .contact-item-text { font-size: 14px; }
+  .contact-item-label { font-size: 11px; color: var(--light); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
+  .contact-item-value { color: var(--charcoal); }
+  .contact-item-value a { color: var(--charcoal); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .contact-item-value a:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal); color: rgba(255,255,255,0.4);
+    text-align: center; padding: 2rem 5%;
+    font-size: 12px; letter-spacing: 0.06em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.7s ease forwards; }
+  .fade-up-2 { animation: fadeUp 0.7s 0.15s ease forwards; opacity: 0; }
+  .fade-up-3 { animation: fadeUp 0.7s 0.3s ease forwards; opacity: 0; }
+  .fade-up-4 { animation: fadeUp 0.7s 0.45s ease forwards; opacity: 0; }
+
+  /* RESPONSIVE */
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-stats { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 2rem; display: flex; gap: 2rem; flex-wrap: wrap; }
+    .stat-item { margin-bottom: 0; }
+    .expertise-grid { grid-template-columns: 1fr 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 1rem; }
+    .acc-grid { grid-template-columns: 1fr; }
+    .skills-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 560px) {
+    .expertise-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Anum Zafarullah</a>
+  <ul class="nav-links">
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-label fade-up">HR Strategy &amp; Organisational Development</p>
+      <h1 class="hero-name fade-up-2">Anum<br>Zafarullah</h1>
+      <p class="hero-title fade-up-3">Organisational Design · Performance · Capability Building</p>
+      <p class="hero-bio fade-up-3">
+        I design and scale organisations by aligning structure, roles, and talent with business strategy. 
+        With 12+ years across Oil &amp; Gas, Banking, Telecom, Aviation, and Manufacturing, I partner with 
+        leadership teams to solve structural inefficiencies and implement systems that drive measurable outcomes.
+      </p>
+      <div class="fade-up-4">
+        <a href="#contact" class="hero-cta">Get in touch</a>
+        <a href="#experience" class="hero-cta-sec">View experience</a>
+      </div>
+    </div>
+    <div class="hero-stats fade-up-4">
+      <div class="stat-item">
+        <div class="stat-num">12<span>+</span></div>
+        <div class="stat-label">Years of experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Industries served</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">20<span>+</span></div>
+        <div class="stat-label">Divisions restructured</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">200<span>+</span></div>
+        <div class="stat-label">Critical roles succession-planned</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">What I do</p>
+      <h2 class="section-title">Areas of Expertise</h2>
+    </div>
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <svg class="expertise-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="4" y="10" width="10" height="16" rx="1"/><rect x="22" y="4" width="10" height="10" rx="1"/>
+          <rect x="22" y="22" width="10" height="10" rx="1"/><line x1="14" y1="18" x2="22" y2="9"/>
+          <line x1="14" y1="18" x2="22" y2="27"/>
+        </svg>
+        <h3>Organisational Design</h3>
+        <p>Restructuring divisions, redefining roles, and implementing grade frameworks that improve clarity and operational efficiency across complex organisations.</p>
+      </div>
+      <div class="expertise-card">
+        <svg class="expertise-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="18" cy="12" r="5"/><path d="M8 28c0-5.523 4.477-10 10-10s10 4.477 10 10"/>
+          <path d="M26 14l2 2 4-4"/>
+        </svg>
+        <h3>Talent &amp; Succession</h3>
+        <p>Building leadership pipelines through succession planning for critical roles, competency frameworks, and high-potential development programmes.</p>
+      </div>
+      <div class="expertise-card">
+        <svg class="expertise-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+          <polyline points="4,28 12,18 18,22 26,10 32,14"/><circle cx="12" cy="18" r="2" fill="currentColor"/>
+          <circle cx="18" cy="22" r="2" fill="currentColor"/><circle cx="26" cy="10" r="2" fill="currentColor"/>
+        </svg>
+        <h3>Performance Management</h3>
+        <p>Designing pay-for-performance frameworks, KPI systems, and appraisal structures that align individual output with strategic business objectives.</p>
+      </div>
+      <div class="expertise-card">
+        <svg class="expertise-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M18 4C10.268 4 4 10.268 4 18s6.268 14 14 14 14-6.268 14-14S25.732 4 18 4z"/>
+          <path d="M18 12v6l4 4"/>
+        </svg>
+        <h3>Culture &amp; Engagement</h3>
+        <p>Rolling out corporate values, designing engagement surveys, and leading culture transformation programmes that improve retention and belonging.</p>
+      </div>
+      <div class="expertise-card">
+        <svg class="expertise-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="4" y="8" width="28" height="20" rx="2"/>
+          <line x1="4" y1="14" x2="32" y2="14"/><line x1="10" y1="20" x2="18" y2="20"/>
+          <line x1="10" y1="24" x2="14" y2="24"/>
+        </svg>
+        <h3>HR Policy &amp; Compliance</h3>
+        <p>Developing comprehensive HR policies, SOPs, and employee handbooks with full compliance to labour law — including UAE Labour Law frameworks.</p>
+      </div>
+      <div class="expertise-card">
+        <svg class="expertise-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 28l8-8 6 6 10-14"/><circle cx="6" cy="28" r="2" fill="currentColor"/>
+          <circle cx="14" cy="20" r="2" fill="currentColor"/><circle cx="20" cy="26" r="2" fill="currentColor"/>
+        </svg>
+        <h3>Workforce Planning &amp; Analytics</h3>
+        <p>Leveraging HR analytics and HRIS to guide retention strategy, headcount planning, and data-driven decision-making for leadership teams.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Career history</p>
+      <h2 class="section-title">Professional Experience</h2>
+    </div>
+    <div class="experience-list">
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <p class="exp-period">Dec 2023 – Present</p>
+          <p class="exp-company">A2C Services LLC</p>
+          <p class="exp-industry">IT Services · UAE</p>
+        </div>
+        <div>
+          <h3 class="exp-title">HR Manager</h3>
+          <p class="exp-desc">Global refurbished IT services company with certified remanufacturing operations and ~400 employees.</p>
+          <ul class="exp-highlights">
+            <li>Designed employee cadre framework and structured job descriptions across 300+ employees</li>
+            <li>Developed comprehensive HR policies and employee handbook with full UAE Labour Law compliance</li>
+            <li>Rolled out 2 performance management frameworks with KPIs, PIPs, and pay-for-performance linkages</li>
+            <li>Reduced early attrition by 25% through structured recruitment and lifecycle frameworks</li>
+            <li>Cut onboarding time-to-productivity by 45% (45 → 25 days)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <p class="exp-period">Dec 2022 – Nov 2023</p>
+          <p class="exp-company">Mari Energies</p>
+          <p class="exp-industry">Oil &amp; Gas · Pakistan</p>
+        </div>
+        <div>
+          <h3 class="exp-title">Culture &amp; Engagement Advisor</h3>
+          <p class="exp-desc">Leading integrated Exploration &amp; Production company with 1,600+ employees.</p>
+          <ul class="exp-highlights">
+            <li>Spearheaded graduate hiring and early-career programme design, building a diverse leadership pipeline</li>
+            <li>Executed Leadership Development Plans across 3 levels — 30% of participants promoted to managerial roles</li>
+            <li>Led values rollout across 12 departments, embedding culture and driving employee ownership</li>
+            <li>Designed training and engagement programmes enhancing wellbeing and retention</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <p class="exp-period">Dec 2021 – Dec 2022</p>
+          <p class="exp-company">CMPak Zong</p>
+          <p class="exp-industry">Telecom · Pakistan</p>
+        </div>
+        <div>
+          <h3 class="exp-title">Assistant Manager — Organisational Development</h3>
+          <p class="exp-desc">Pakistan's largest 4G mobile network operator with nationwide operations.</p>
+          <ul class="exp-highlights">
+            <li>Architected Digital Competency and OKR frameworks to align talent capabilities with business strategy</li>
+            <li>Launched LinkedIn Learning integration; delivered 80+ programmes upskilling 300+ employees</li>
+            <li>Conducted organisation-wide engagement survey with 700+ responses; translated insights into action plans</li>
+            <li>Improved engagement by 10% through culture strategy in a hybrid/WFH environment</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <p class="exp-period">Jan 2015 – Dec 2021</p>
+          <p class="exp-company">Askari Bank Ltd</p>
+          <p class="exp-industry">Banking · Pakistan</p>
+        </div>
+        <div>
+          <h3 class="exp-title">Manager — Organisational Development</h3>
+          <p class="exp-desc">Progressive banking organisation with 7,800+ employees across 530+ branches.</p>
+          <ul class="exp-highlights">
+            <li>Led organisation-wide restructuring across 20 divisions including role redesign and grade capping</li>
+            <li>Launched pay-for-performance frameworks boosting productivity by 20–30%</li>
+            <li>Directed succession planning for 200+ critical roles — 60% of successors promoted</li>
+            <li>Developed 700+ job descriptions aligned to performance metrics</li>
+            <li>Reduced internal hiring time by 30% via an online employee profile system</li>
+            <li>Served as DE&amp;I point of contact, supporting female and minority employee groups</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <p class="exp-period">Jan 2013 – Nov 2014</p>
+          <p class="exp-company">Airblue Ltd</p>
+          <p class="exp-industry">Aviation · Pakistan</p>
+        </div>
+        <div>
+          <h3 class="exp-title">HR Coordinator</h3>
+          <p class="exp-desc">Domestic and international airline with 1,600+ staff.</p>
+          <ul class="exp-highlights">
+            <li>Managed end-to-end recruitment and onboarding for 200+ hires</li>
+            <li>Developed and implemented Grievance Management Scheme ensuring timely conflict resolution</li>
+            <li>Supported full HR operations including policies, transfers, payroll coordination, and compliance</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACCOMPLISHMENTS -->
+<section id="accomplishments">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Impact delivered</p>
+      <h2 class="section-title">Key Accomplishments</h2>
+    </div>
+    <div class="acc-grid">
+      <div class="acc-card">
+        <h3>Organisational Design at Scale</h3>
+        <p>Reorganised 20+ divisions — including organisations of up to 7,800+ employees — with job clarity improvements, grade capping, and cadre frameworks that measurably improved role alignment and efficiency.</p>
+      </div>
+      <div class="acc-card">
+        <h3>Talent &amp; Succession Pipeline</h3>
+        <p>Executed succession planning for 200+ critical roles and developed digital competency frameworks, upskilling 200+ employees to build robust high-potential talent pipelines with a 60% internal promotion rate.</p>
+      </div>
+      <div class="acc-card">
+        <h3>Performance &amp; Rewards Uplift</h3>
+        <p>Implemented Pay-for-Performance initiatives, appraisal systems, and incentive frameworks that boosted workforce productivity by 20–30% across multiple organisations and sectors.</p>
+      </div>
+      <div class="acc-card">
+        <h3>Culture &amp; Engagement Transformation</h3>
+        <p>Designed and rolled out corporate values across 1,600+ employees; led engagement surveys and wellness programmes that measurably improved retention, belonging, and cultural alignment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Capabilities</p>
+      <h2 class="section-title">Skills &amp; Tools</h2>
+    </div>
+    <div class="skills-layout">
+      <div>
+        <div class="skills-group">
+          <h3>HR &amp; OD Competencies</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Organisational Design</span>
+            <span class="skill-tag">Workforce Planning</span>
+            <span class="skill-tag">Succession Planning</span>
+            <span class="skill-tag">Talent Management</span>
+            <span class="skill-tag">Change Transformation</span>
+            <span class="skill-tag">Performance Management</span>
+            <span class="skill-tag">Learning &amp; Development</span>
+            <span class="skill-tag">Employee Engagement</span>
+            <span class="skill-tag">HR Analytics</span>
+            <span class="skill-tag">Culture Transformation</span>
+            <span class="skill-tag">HR Strategy</span>
+            <span class="skill-tag">Employee Relations</span>
+            <span class="skill-tag">Competency Frameworks</span>
+            <span class="skill-tag">HR Policies &amp; SOPs</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="skills-group" style="margin-bottom: 2.5rem;">
+          <h3>Technology &amp; Systems</h3>
+          <div class="tools-list">
+            <div class="tool-item">MS Office Suite (Excel, Word, PowerPoint, Visio)</div>
+            <div class="tool-item">HRIS &amp; Talent Management Systems</div>
+            <div class="tool-item">Power BI &amp; HR Dashboards</div>
+            <div class="tool-item">LinkedIn Learning (LMS integration)</div>
+          </div>
+        </div>
+        <div class="skills-group">
+          <h3>Languages</h3>
+          <div class="tools-list">
+            <div class="tool-item">English (Professional proficiency)</div>
+            <div class="tool-item">Urdu (Native)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Academic background</p>
+      <h2 class="section-title">Education</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <p class="edu-degree">Masters in HR &amp; Knowledge Management</p>
+        <p class="edu-school">Lancaster University, United Kingdom</p>
+        <p class="edu-year">2012</p>
+      </div>
+      <div class="edu-card">
+        <p class="edu-degree">BBA — Business Administration</p>
+        <p class="edu-school">National University of Computers &amp; Emerging Sciences, Pakistan</p>
+        <p class="edu-year">2011</p>
+        <span class="edu-badge">Bronze Medallist</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <p class="section-tag">Let's connect</p>
+        <h2 class="section-title">Get in Touch</h2>
+        <p>Open to senior HR and organisational development roles, advisory engagements, and speaking opportunities across the GCC and beyond.</p>
+      </div>
+      <div class="contact-details">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value"><a href="mailto:anumzafarullah@gmail.com">anumzafarullah@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.23h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value"><a href="tel:+971561479206">+971 56 147 9206</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <div class="contact-item-label">LinkedIn</div>
+            <div class="contact-item-value"><a href="https://linkedin.com/in/anum-zafarullah-hrprofessional" target="_blank">anum-zafarullah-hrprofessional</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <div class="contact-item-label">Location</div>
+            <div class="contact-item-value">Ras Al Khaimah, UAE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Anum Zafarullah &nbsp;·&nbsp; HR &amp; Organisational Development Professional</p>
+</footer>
+
+</body>
+</html>
